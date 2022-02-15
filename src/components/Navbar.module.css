@@ -1,0 +1,12 @@
+.nav {
+    grid-area: p;
+    background-color: indianred;
+}
+
+.item {
+    color: white;
+}
+
+.img {
+    width: 20 px;
+}
