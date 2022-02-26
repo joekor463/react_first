@@ -13,7 +13,7 @@
 
 
 
-.content {
+.app-wrapper-content {
     grid-area: c;
-    background-color: lightslategray;
+    background-color: cadetblue;
 }

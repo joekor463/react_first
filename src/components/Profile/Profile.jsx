@@ -3,15 +3,16 @@ import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
-    return  <div className={s.content}>
+    return  (
         <div>
-            <img src='https://interier-foto.ru/wp-content/uploads/ozero-v-gorax.jpg'/>
-        </div>
-        <div>
-            avatar + description
-        </div>
-            <MyPosts />
-    </div>
+            <div>
+                <img src='https://interier-foto.ru/wp-content/uploads/ozero-v-gorax.jpg'/>
+            </div>
+            <div>
+                avatar + description
+            </div>
+            <MyPosts/>
+        </div>)
 }
 
 export default Profile;
