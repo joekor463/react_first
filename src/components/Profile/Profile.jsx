@@ -5,7 +5,7 @@ import MyPosts from './MyPosts/MyPosts';
 const Profile = () => {
     return  (
         <div>
-            <div>
+            <div className={s.content}>
                 <img src='https://interier-foto.ru/wp-content/uploads/ozero-v-gorax.jpg'/>
             </div>
             <div>

@@ -1,12 +1,18 @@
 .nav {
     grid-area: p;
     background-color: indianred;
+    padding: 20px;
 }
 
-.item {
+.item a{
     color: white;
+    text-decoration: none;
 }
 
 .img {
     width: 20 px;
+}
+
+.item a.active {
+    color: gold;
 }
