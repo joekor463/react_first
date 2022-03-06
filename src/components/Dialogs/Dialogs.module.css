@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
-.dialog {
-
+.dialog .active{
+    color: gold;
 }
 .dialogsItems{
     padding: 10px;

@@ -1,33 +1,34 @@
 import React from "react";
 import s from './Dialogs.module.css';
+import {NavLink} from "react-router-dom";
 
+const DialogItem = (props) => {
+    return <div className={s.dialog + ' ' + s.active}>
+        <NavLink to={"/dialogs/" + props.id}> {props.name} </NavLink>
+    </div>
+}
+
+const Message = (props) => {
+    return <div className={s.message}>{props.message}</div>
+}
 const Dialogs = (props) => {
     return (
         <div>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <div className={s.dialog}>
-                        Joe
-                    </div>
-                    <div className={s.dialog + ' ' + s.active }>
-                        An
-                    </div>
-                    <div className={s.dialog}>
-                       Sofi
-                    </div>
-                    <div className={s.dialog}>
-                        Kristy
-                    </div>
-                    <div className={s.dialog}>
-                        Unknow
-                    </div>
+                    <DialogItem name="Joe" id="1"/>
+                    <DialogItem name="Anton" id="2"/>
+                    <DialogItem name="Sofi" id="3"/>
+                    <DialogItem name="Kristy" id="4"/>
+                    <DialogItem name="Unknow" id="5"/>
+
                 </div>
                 <div className={s.messages}>
-                    <div className={s.message}>Hello</div>
-                    <div className={s.message}>What's up?</div>
-                    <div className={s.message}>Where are you?</div>
-                    <div className={s.message}>What's going on?</div>
-                    <div className={s.message} >We in submarine</div>
+                    <Message message = "Hello"/>
+                    <Message message = "What's up?"/>
+                    <Message message = "Where are you?"/>
+                    <Message message = "What's going on?"/>
+                    <Message message = "We in submarine"/>
                 </div>
             </div>
         </div>
