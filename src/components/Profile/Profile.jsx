@@ -6,12 +6,12 @@ const Profile = () => {
     return  (
         <div>
             <div className={s.content}>
-                <img src='https://interier-foto.ru/wp-content/uploads/ozero-v-gorax.jpg'/>
+                <img src='https://interier-foto.ru/wp-content/uploads/2014/11/chuja6369.jpg'/>
             </div>
             <div>
                 avatar + description
             </div>
-            <MyPosts/>
+            <MyPosts />
         </div>)
 }
 
