@@ -2,7 +2,10 @@ import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 
-const Profile = () => {
+const Profile = (props) => {
+
+
+
     return  (
         <div>
             <div className={s.content}>
@@ -11,7 +14,7 @@ const Profile = () => {
             <div>
                 avatar + description
             </div>
-            <MyPosts />
+            <MyPosts posts={props.posts}/>
         </div>)
 }
 
