@@ -26,8 +26,8 @@ let state = {
             {id: 4, message: 'Whats going on?'},
             {id: 5, message: 'We in submarine'}
         ]
-    }
-
+    },
+    sidebar : {}
 }
 
 export default state;

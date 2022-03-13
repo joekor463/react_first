@@ -21,3 +21,8 @@
 .messages .message{
     color : ghostwhite;
 }
+.dialogsItems img {
+    width :  50px;
+    height : 50px;
+    border-radius : 30px;
+}

@@ -4,8 +4,7 @@ import s from './Header.module.css';
 const Header = () => {
     return (
         <header className={s.header}>
-            <img src='https://image.shutterstock.com/image-vector/vector-illustration-icon-bunch-ripe-260nw-646958365.jpg'/>
-
+            <img src='https://www.nicepng.com/png/detail/976-9761880_v-for-vendetta-clipart-anonymous-v-for-vendetta.png'/>
         </header>)
 
 }
