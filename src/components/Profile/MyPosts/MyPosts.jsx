@@ -14,11 +14,13 @@ const MyPosts = (props) => {
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
+        //console.log(text);
+        //let text = newPostElement.current.value;
         props.updateNewPostText(text);
     }
 
     return (
-         <div className={<s className="postBlock"></s>}>
+         <div className={s.postBlock}>
              <h3>My posts </h3>
              <div>
                  <div>

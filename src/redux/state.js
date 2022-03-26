@@ -30,6 +30,9 @@ let state = {
     },
     sidebar : {}
 }
+
+window.state = state;
+
 export let addPost = () => {
     let newPost = {
         id : 5,
@@ -41,12 +44,11 @@ export let addPost = () => {
     rerenderEntireTree(state);
 }
 
-    export let updateNewPostText = (newText) => {
-        state.profilePage.newPostText = newText     ;
-        rerenderEntireTree(state);
-        };
-
-                                                                                                                                              rerenderEntireTree(state);
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+                                                                                                                                             rerenderEntireTree(state);
 
 
 export default state;
