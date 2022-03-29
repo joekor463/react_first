@@ -1,4 +1,3 @@
-
 import './App.css';
 import React from 'react';
 import Header from "./components/Header/Header";
@@ -11,9 +10,6 @@ import {updateNewPostText} from "./redux/state";
 
 
 const App = (props) => {
-
-
-
     return  (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -24,8 +20,7 @@ const App = (props) => {
                         <Route path='/dialogs' element={<Dialogs  state={props.state.dialogPage} />}/>
                         <Route path='/profile' element={<Profile
                             profilePage={props.state.profilePage}
-                            addPost={props.addPost}
-                            updateNewPostText={props.updateNewPostText}
+                            dispatch={props.dispatch}
                         />}/>
                     </Routes>
                 <Friends />
