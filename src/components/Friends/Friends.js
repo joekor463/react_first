@@ -1,23 +1,17 @@
-
+import React from 'react';
 import s from "../Dialogs/Dialogs.module.css";
 
 const Friends = (props) => {
 
-        return (
-        <div>
+    return (
             <div>
                 <div>
-
-                   Friend1
-
+                    Friend1
                 </div>
-                <div >
-
+                <div>
                     Friend2
-
                 </div>
             </div>
-        </div>
     )
 }
 
