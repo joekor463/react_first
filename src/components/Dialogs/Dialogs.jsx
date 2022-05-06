@@ -8,8 +8,8 @@ const Dialogs = (props) => {
 
     let state = props.dialogsPage;
 
-    let dialogsElement =  state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = state.messages.map(m => <Message message={m.message}/>);
+    let dialogsElement =  state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>);
+    let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id}/>);
     let newMessageBody =  state.newMessageBody;
 
 
@@ -30,7 +30,7 @@ const Dialogs = (props) => {
                 <div className={s.dialogsItems}>
                     <img
                         src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArldmHJgfTrDAVzIHFUMMM4uOuWzGPhi2_Q&usqp=CAU'/>
-                    {dialogsElement}
+                     {dialogsElement}
                 </div>
                 <div className={s.messages}>
                     {messagesElements}
