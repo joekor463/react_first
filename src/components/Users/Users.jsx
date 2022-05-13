@@ -1,11 +1,18 @@
 import React from 'react';
 import styles from './Users.module.css';
+import * as axios from "axios";
+import userPhoto from '../../assets/images/user.png';
 
 
 const Users = (props) => {
 
     if (props.users.length === 0) {
-        props.setUsers([
+
+        axios.get(" https://social-network.samuraijs.com/api/1.0/users").then(responce => {
+            props.setUsers(responce.data.items);
+        });
+
+    /*    props.setUsers([
                 {
                     id: 1,
                     fotoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIna5_1Tcmkha_KMBiodqb_NJpYXat2iPLQ&usqp=CAU',
@@ -39,7 +46,7 @@ const Users = (props) => {
                     location: {city: 'Saint Pitersberg', country: 'Russia'}
                 }
             ]
-        )
+        )*/
     }
     return (
             <div>
@@ -47,7 +54,7 @@ const Users = (props) => {
                     props.users.map(u => <div key={u.id}>
                         <span>
                             <div>
-                                <img  src={u.fotoUrl} className={styles.userPhoto}/>
+                                <img  src={u.photos.small != null ? u.photos.small : userPhoto } className={styles.userPhoto}/>
                             </div>
                             <div>
                                 {u.followed
@@ -57,12 +64,12 @@ const Users = (props) => {
                         </span>
                         <span>
                             <span>
-                                <div>{u.fullName}</div>
+                                <div>{u.name}</div>
                                 <div>{u.status}</div>
                             </span>
                             <span>
-                                <div>{u.location.country}</div>
-                                <div>{u.location.city}</div>
+                                <div>{"u.location.country"}</div>
+                                <div>{"u.location.city"}</div>
                             </span>
                         </span>
                     </div>)
