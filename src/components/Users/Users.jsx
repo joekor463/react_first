@@ -5,51 +5,18 @@ import userPhoto from '../../assets/images/user.png';
 
 
 const Users = (props) => {
+    let getUsers = () => {
+        if (props.users.length === 0) {
 
-    if (props.users.length === 0) {
-
-        axios.get(" https://social-network.samuraijs.com/api/1.0/users").then(responce => {
-            props.setUsers(responce.data.items);
-        });
-
-    /*    props.setUsers([
-                {
-                    id: 1,
-                    fotoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIna5_1Tcmkha_KMBiodqb_NJpYXat2iPLQ&usqp=CAU',
-                    followed: false,
-                    fullName: 'Evgen',
-                    status: 'first commandor',
-                    location: {city: 'Acapulco', country: 'Mexico'}
-                },
-                {
-                    id: 2,
-                    fotoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIna5_1Tcmkha_KMBiodqb_NJpYXat2iPLQ&usqp=CAU',
-                    followed: true,
-                    fullName: 'Asya',
-                    status: 'second first commandor',
-                    location: {city: 'Acapulco', country: 'Mexico'}
-                },
-                {
-                    id: 3,
-                    fotoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIna5_1Tcmkha_KMBiodqb_NJpYXat2iPLQ&usqp=CAU',
-                    followed: false,
-                    fullName: 'Sonya',
-                    status: 'second commandor',
-                    location: {city: 'Lissabon', country: 'Portugal'}
-                },
-                {
-                    id: 4,
-                    fotoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIna5_1Tcmkha_KMBiodqb_NJpYXat2iPLQ&usqp=CAU',
-                    followed: true,
-                    fullName: 'Kristi',
-                    status: 'third commandor',
-                    location: {city: 'Saint Pitersberg', country: 'Russia'}
-                }
-            ]
-        )*/
+            axios.get(" https://social-network.samuraijs.com/api/1.0/users").then(responce => {
+                props.setUsers(responce.data.items);
+            });
+        }
     }
+
     return (
             <div>
+                <button onClick={getUsers}>Get users</button>
                 {
                     props.users.map(u => <div key={u.id}>
                         <span>
