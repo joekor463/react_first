@@ -5,8 +5,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import DialogsContainer  from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import {BrowserRouter, Route, Routes } from "react-router-dom";
-import {updateNewPostText} from "./redux/store";
+import {Route, Routes } from "react-router-dom";
+
 
 
 const App = () => {
