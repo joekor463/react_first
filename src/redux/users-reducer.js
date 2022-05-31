@@ -1,5 +1,5 @@
 import React from 'react';
-import users from "../components/Users/Users";
+import users from "../components/Users/UsersContainer";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -11,7 +11,7 @@ let initialState = {
     users : [  ],
     pageSize: 5,
     totalUsersCount: 0,
-    currentPage: 3
+    currentPage: 1
 };
 
 const usersReducer = (state = initialState, action) => {
