@@ -1,5 +1,6 @@
 import React from 'react';
 import users from "../components/Users/UsersContainer";
+import {userAPI} from "../api/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -76,4 +77,15 @@ export const setUsersTotalCount  = (totalUsersCount) => ({type : SET_TOTAL_USERS
 export const toggleIsFetching  = (isFetching) => ({type : TOGGLE_IS_FETCHING, isFetching});
 export const toggleFollowingProgress = (isFetching, userId) => ({type : TOGGLE_IS_FOLOOWING_PROGRESS, isFetching, userId});
 
+export const getUsersThunkCreator = (currentPage, pageSize) => {
+    return (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    userAPI.getUsers(currentPage, pageSize).then(data => {
+
+        dispatch(toggleIsFetching(false));
+        dispatch(setUsers(data.items));
+        dispatch(setUsersTotalCount(data.totalCount));
+        });
+    }
+}
 export default usersReducer;
