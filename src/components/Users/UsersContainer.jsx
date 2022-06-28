@@ -6,22 +6,14 @@ import {
     unfollow,
     toggleFollowingProgress, getUsers
        } from '../../redux/users-reducer';
-import * as axios from 'axios';
 import Users from './Users';
 import Preloader from "../Common/Preloader/Preloader";
-import {usersAPI} from "../../api/api";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component{
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize);
-        /*this.props.toggleIsFetching(true);
-       userAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-           
-                this.props.toggleIsFetching(false);
-                this.props.setUsers(data.items);
-                this.props.setUsersTotalCount(data.totalCount);
-            });*/
     }
 
     onPageChanged = (pageNumber) => {
@@ -56,7 +48,9 @@ let mapStateToProps = (state) => {
         followingInProgress: state.usersPage.followingInProgress
     }
 }
-let withRedirect = withAuthRedirect(UsersContainer)
 
-export default withAuthRedirect(connect(mapStateToProps, {follow, unfollow, setCurrentPage,
-    toggleFollowingProgress, getUsers })(UsersContainer));
+
+export default compose(
+    withAuthRedirect,
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
+)(UsersContainer);
