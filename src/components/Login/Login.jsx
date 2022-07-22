@@ -1,36 +1,73 @@
 import React from "react";
-import reduxForm from "redux-form/lib/immutable/reduxForm";
-import Field from "redux-form/lib/Field";
+import { Formik } from 'formik';
 
-const LoginForm = (props) => {
-    return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field  placeholder={"Login"} name={"login"} component={"input"}/>
-            </div>
-            <div>
-                <Field placeholder={"Password"} name={"password"} component={"input"}/>
-            </div>
-            <div>
-                <Field component={"input"} name={"rememberMe"} type={"checkbox"}/> Remember me
-            </div>
-            <div>
-                <button>Login</button>
-            </div>
-        </form>
-    )
-}
-
-const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
-
-const Login = (props) => {
-    return (
-        <div>
-            <h1>Login</h1>
-            <LoginReduxForm/>
-        </div>
-    )
+import loginFormSchema from "./LoginFormSchema";
 
 
-}
-export default Login;
+
+const Login = () => (
+    <div>
+        <h1>
+            Login
+        </h1>
+
+        <Formik
+            initialValues = {{ name: "", password: "", rememberMe:true}}
+            validateOnBlur
+            onSubmit={(values) => { console.log(values) }}
+            validationSchema={loginFormSchema}
+        >
+            {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+                <div>
+                    <p>
+                        <label htmlFor={'name'}> Имя </label> <br/>
+                        <input
+                            type={'text'}
+                            name={'name'}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.name}
+
+                        />
+                    </p>
+                    {touched.name && errors.name && <p>{errors.name}</p>}
+
+                    <p>
+                        <label htmlFor={'password'}> Пароль </label> <br/>
+                        <input
+                            type={'password'}
+                            name={'password'}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.password}
+
+                        />
+                    </p>
+                    {touched.password && errors.password && <p>{errors.password}</p>}
+
+                    <p>
+                        <input
+                            type={'checkbox'}
+                            name={'rememberMe'}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.rememberMe}
+
+                        /><label htmlFor={'rememberMe'}> remember me </label>
+                    </p>
+
+
+                    <button disabled={!isValid && !dirty}
+                            onClick={handleSubmit}
+                            type={'submit'}>Send</button>
+                </div>
+            )}
+
+        </Formik>
+
+
+    </div>
+);
+
+
+export default Login
