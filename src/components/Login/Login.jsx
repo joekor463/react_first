@@ -1,11 +1,12 @@
 import React from "react";
-import { Formik } from 'formik';
+import {connect, Formik} from 'formik';
 
 import loginFormSchema from "./LoginFormSchema";
+import {login} from "../../redux/auth-reducer";
 
 
 
-const Login = () => (
+const Login = (props) => (
     <div>
         <h1>
             Login
@@ -70,4 +71,4 @@ const Login = () => (
 );
 
 
-export default Login
+export default connect (mapStateToProps, {login}) (Login);
