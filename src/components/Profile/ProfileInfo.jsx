@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            {/*<div className={s.content}>
+                    {/*<div className={s.content}>
                 <img src='https://interier-foto.ru/wp-content/uploads/2014/11/chuja6369.jpg'/>
             </div>*/}
             <div className={s.descriptionBlock}>

@@ -4,7 +4,6 @@ import React from "react";
 
 class ProfileStatus extends React.Component {
 
-
     state = {
         editMode: false,
         status: this.props.status
@@ -29,7 +28,17 @@ class ProfileStatus extends React.Component {
         });
     }
 
+    componentDidUpdate(prevProps, prevState) {
+       if(prevProps.status !== this.props.status){
+            this.setState({
+                status: this.props.status
+            })
+        }
+        console.log("componentDidUpdate")
+    }
+
     render () {
+        console.log("render")
         return (
             <div>
                 {!this.state.editMode &&
@@ -44,7 +53,7 @@ class ProfileStatus extends React.Component {
                 }
             </div>
         )
-    }
+     }
 }
 
 export default ProfileStatus;
