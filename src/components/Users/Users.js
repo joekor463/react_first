@@ -11,7 +11,7 @@ let Users = (props) => {
     let pages = [];
     for(let i=1; i <= pagesCount;i++){
         pages.push(i);
-        //if (i == 20) break;
+        // if (i == 20) break;
     }
     return     <div>
         <div>
@@ -37,7 +37,8 @@ let Users = (props) => {
                                         .some(id => id === u.id)}
                                               onClick={() => {props.unfollow(u.id) }}>
                                         Unfollow</button>
-                                    : <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                    : <button disabled={props.followingInProgress
+                                        .some(id => id === u.id)}
                                               onClick={() => {props.follow(u.id) }}>
                                         Follow</button>}
                             </div>

@@ -23,7 +23,7 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 class ProfileContainer extends React.Component{
-
+    debugger
     componentDidMount() {
         let userId = this.props.router.params.userId;
         if(!userId) {userId=24353 }
