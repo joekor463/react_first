@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {getAuthUserData} from "./auth-reducer";
 
 
