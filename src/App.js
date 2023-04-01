@@ -4,12 +4,13 @@ import React, {Suspense} from 'react';
 import Navbar from "./components/Navbar/Navbar";
 
 import UsersContainer from "./components/Users/UsersContainer";
-import {Redirect, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
+//import {Redirect, Route, Routes} from "react-router-dom";
 //import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
-import {initializeApp} from "./redux/app-reducer";
+import {initializeApp} from "./redux/app-reducer.ts";
 import Preloader from "./components/Common/Preloader/Preloader";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));

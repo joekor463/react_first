@@ -5,7 +5,7 @@ import {
     setCurrentPage,
     unfollow,
     toggleFollowingProgress, requestUsers
-       } from '../../redux/users-reducer';
+       } from '../../redux/users-reducer.ts';
 import Users from './Users';
 import Preloader from "../Common/Preloader/Preloader";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
